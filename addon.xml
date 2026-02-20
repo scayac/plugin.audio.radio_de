@@ -1,4 +1,4 @@
-<addon id="plugin.audio.radio_de" name="Radio" provider-name="Tristan Fischer, enen92" version="3.0.9+matrix.1">
+<addon id="plugin.audio.radio_de" name="Radio" provider-name="Tristan Fischer, enen92" version="3.1.0+matrix.1">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.xbmcswift2" version="19.0.6" />
@@ -8,12 +8,14 @@
     </extension>
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
-        <website>https://www.radio.de</website>
+        <website>https://www.radio-browser.info/</website>
         <source>https://github.com/XBMC-Addons/plugin.audio.radio_de</source>
         <forum>https://forum.kodi.tv/showthread.php?tid=119362</forum>
         <license>GPL-2.0-only</license>
-        <news>v3.0.9+matrix.1 (31/12/2021)
-            [new] Sync translations
+        <news>v3.1.0+matrix.1 (20/02/2026)
+            [fix] Replace legacy radio.de API integration with Radio Browser backend
+            [fix] Restore station browsing and playback after upstream API changes
+            [fix] Support UUID-based station IDs in My Stations
         </news>
         <assets>
             <icon>resources/art/icon.png</icon>
@@ -60,9 +62,9 @@
         <description lang="da_DK">Musikplugin som giver adgang til over 30000 internationale radioudsendelser fra rad.io, radio.de, radio.fr, radio.pt og radio.es[CR]Nuværende funktioner[CR]- Oversat til engelsk, tysk og fransk[CR]- Gennemse stationer efter lokalitet, genre, emne, land, by og sprog[CR]- Søg efter stationer[CR]- 115 genrer, 59 emner, 94 lande, 1010 byer og 63 sprog</description>
         <description lang="de_DE">Musik-Plugin für den Zugriff auf über 30.000 internationale Radioprogramme von rad.io, radio.de, radio.fr, radio.pt und radio.es[CR]Aktuelle Features[CR]- Auf Englisch, Deutsch, Französisch übersetzt[CR]- Sender durchstöbern nach Ort, Genre, Thema, Land, Stadt und Sprache[CR]- Nach Sendern suchen[CR]- 115 Genres, 59 Themen, 94 Länder, 1010 Städte, 63 Sprachen</description>
         <description lang="el_GR">Μουσικό plugin για πρόσβαση σε περισσότερους από 30000 διεθνείς ραδιοφωνικές εκπομπές από τα rad.io, radio.de και radio.fr[CR]Υποστηρίζονται[CR]- Μεταφράσεις σε Αγγλικά, Γερμανικά και Γαλλικά[CR]- Περιήγηση σταθμών ανά τοποθεσία, είδος, θέμα, χώρα, πόλη και γλώσσα[CR]- Αναζήτηση σταθμών[CR]- 115 είδη, 59 θέματα, 94 χώρες, 1010 πόλεις, 63 γλώσσες</description>
-        <description lang="en_GB">Music plugin to access over 30000 international radio broadcasts from rad.io, radio.de, radio.fr, radio.pt and radio.es[CR]Currently features[CR]- English, german, french translated[CR]- Browse stations by location, genre, topic, country, city and language[CR]- Search for stations[CR]- 115 genres, 59 topics, 94 countrys, 1010 citys, 63 languages</description>
-        <description lang="en_NZ">Music plugin to access over 30000 international radio broadcasts from rad.io, radio.de, radio.fr, radio.pt and radio.es[CR]Currently features[CR]- English, german and french translated[CR]- Browse stations by location, genre, topic, country, city and language[CR]- Search for stations[CR]- 115 genres, 59 topics, 94 countrys, 1010 citys, 63 languages</description>
-        <description lang="en_US">Music plugin to access over 30000 international radio broadcasts from rad.io, radio.de and radio.fr[CR]Currently features[CR]- English, german and french translated[CR]- Browse stations by location, genre, topic, country, city and language[CR]- Search for stations[CR]- 115 genres, 59 topics, 94 countrys, 1010 citys, 63 languages</description>
+        <description lang="en_GB">Music plugin to access international radio broadcasts from the Radio Browser directory[CR]Currently features[CR]- Browse stations by genre, topic, country, city and language[CR]- Search for stations[CR]- Save stations to My Stations[CR]- Add custom stations</description>
+        <description lang="en_NZ">Music plugin to access international radio broadcasts from the Radio Browser directory[CR]Currently features[CR]- Browse stations by genre, topic, country, city and language[CR]- Search for stations[CR]- Save stations to My Stations[CR]- Add custom stations</description>
+        <description lang="en_US">Music plugin to access international radio broadcasts from the Radio Browser directory[CR]Currently features[CR]- Browse stations by genre, topic, country, city and language[CR]- Search for stations[CR]- Save stations to My Stations[CR]- Add custom stations</description>
         <description lang="es_ES">Complemento de música para acceder a más de 30000 emisoras de radio internacionales desde rad.io, radio.de, radio.fr, radio.pt y radio.es[CR]Características actuales[CR]- Traducción al inglés, alemán y francés[CR]- Búsqueda de emisoras por ubicación, género, tema, país, ciudad e idioma[CR]- Búsqueda de emisoras[CR]- 115 géneros, 59 temas, 94 países, 1010 ciudades, 63 idiomas</description>
         <description lang="es_MX">Complemento de música para acceder a más de 30000 transmisiones de radio internacionales de rad.io, radio.de, radio.fr, radio.pt y radio.es[CR]Características actuales[CR]- Traducido a inglés, alemán, francés y español[CR]- Explora estaciones por ubicación, género, tópico, país, ciudad e idioma[CR]Busca estaciones[CR]- 115 géneros, 59 tópicos, 94 países, 1010, ciudades, 63 idiomas</description>
         <description lang="fi_FI">Musiikkilaajennus, jolla pääset käyttämään yli 30 000 kansainvälistä radiolähetystä osoitteesta rad.io, radio.de ja radio.fr[CR]Tämänhetkinen tarjonta[CR]- Käännetty englanniksi, saksaksi ja ranskaksi[CR]- Selaa asemia sijainnin, lajityyppien, aiheiden, maiden, kuapunkien ja kielten perusteella[CR]- Asemien haku[CR]- 115 lajityyppiä, 59 aihetta, 94 maata, 1010 kaupunkia, 63 kieltä</description>

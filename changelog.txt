@@ -1,3 +1,8 @@
+v3.1.0+matrix.1 (20/02/2026)
+    - [fix] Replace legacy radio.de API integration with Radio Browser backend
+    - [fix] Restore station browsing and playback after upstream API changes
+    - [fix] Support UUID-based station IDs in My Stations
+
 v3.0.9+matrix.1 (31/12/2021)
     - [new] Sync translations
 

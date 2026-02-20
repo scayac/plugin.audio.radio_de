@@ -548,17 +548,18 @@ def get_stream_url(station_id):
 def __add_stations(stations, add_custom=False, browse_more=None):
     items = []
     context_menu = []
-    my_station_ids = [int(item) for item in my_stations if item.isdigit()]
+    my_station_ids = {str(item) for item in my_stations.keys()}
     for i, station in enumerate(stations):
         if station:
             station_id = station.get('id')
-            if station_id and not station_id in my_station_ids:
+            station_id_str = str(station_id) if station_id is not None else ''
+            if station_id and station_id_str not in my_station_ids:
                 context_menu = [(
                     _('add_to_my_stations'),
                     'RunPlugin(%s)' % plugin.url_for('add_to_my_stations',
                                                         station_id=station_id),
                 )]
-            elif station_id and station_id in my_station_ids:
+            elif station_id and station_id_str in my_station_ids:
                 context_menu = [(
                     _('remove_from_my_stations'),
                     'RunPlugin(%s)' % plugin.url_for('del_from_my_stations',
@@ -579,7 +580,6 @@ def __add_stations(stations, add_custom=False, browse_more=None):
                     'title': station.get('name', ''),
                     'rating': (10.0 - 0.0)*((float(station.get('rating', 0.0))-30.000)/(1.0-30.000)), # linear interpolation
                     'genre': station.get('genre', ''),
-                    'size': int(station.get('bitrate', 0)),
                     'comment': station.get('description', ''),
                     'count': i,
                 },
